@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faridah & Wafi Wedding</title>
+    
+    <!-- Standard Meta Tags -->
+    <meta name="title" content="Faridah & Wafi Wedding">
+    <meta name="description" content="Minggu, 17 Januari 2027 (9 Sya'ban 1448 H) - Undangan Pernikahan Faridah Aulia, SKM & Mohamad Wafi Fawwaz Al Haq">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wedding1-ten-eta.vercel.app/">
+    <meta property="og:title" content="Faridah & Wafi Wedding">
+    <meta property="og:description" content="Minggu, 17 Januari 2027 (9 Sya'ban 1448 H) - Undangan Pernikahan Faridah Aulia, SKM & Mohamad Wafi Fawwaz Al Haq">
+    <meta property="og:image" content="https://wedding1-ten-eta.vercel.app/img/thumbnail.jpeg">
+    <meta property="og:image:secure_url" content="https://wedding1-ten-eta.vercel.app/img/thumbnail.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faridah & Wafi Wedding">
+    <meta name="twitter:description" content="Minggu, 17 Januari 2027 (9 Sya'ban 1448 H) - Undangan Pernikahan Faridah Aulia, SKM & Mohamad Wafi Fawwaz Al Haq">
+    <meta name="twitter:image" content="https://wedding1-ten-eta.vercel.app/img/thumbnail.jpeg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        script: ['"Alex Brush"', 'cursive'],
+                    },
+                    colors: {
+                        emerald: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            800: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+        .card-white {
+            background: #ffffff;
+            border: 1px solid rgba(6, 78, 59, 0.08);
+            box-shadow: 0 4px 24px -2px rgba(6, 78, 59, 0.06);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        body.locked {
+            overflow: hidden;
+        }
+        #cover {
+            transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-[#fcfcf9] text-slate-800 antialiased locked selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="img/lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" aria-label="Toggle Music" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-white/95 border border-emerald-200 text-emerald-800 rounded-full flex items-center justify-center shadow-lg shadow-emerald-950/10 hidden hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-all">
+        <i data-lucide="music" id="music-icon" class="w-5 h-5"></i>
+    </button>
+
+    <!-- 1. COVER SECTION (WARM & SERENE EMERALD-GOLD) -->
+    <div id="cover" class="fixed inset-0 z-[100] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="img/mempelai.jpeg" class="w-full h-full object-cover object-top opacity-35 filter blur-[2px] scale-105" alt="Wedding background">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#fcfcf9]/90 via-[#fcfcf9]/80 to-[#fcfcf9]"></div>
+        </div>
+
+        <div class="relative z-10 space-y-6 max-w-lg mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-[0.3em]">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span>Undangan Pernikahan</span>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl text-emerald-950 font-bold italic tracking-tight">Faridah & Wafi</h1>
+            
+            <div class="space-y-1">
+                <p class="text-xs font-bold tracking-[0.2em] text-emerald-900 uppercase">Minggu, 17 Januari 2027</p>
+                <p class="text-xs font-semibold tracking-wider text-amber-700">9 Sya'ban 1448 H</p>
+            </div>
+
+            <div class="py-2">
+                <div class="bg-white/95 border border-emerald-100 shadow-lg shadow-emerald-950/5 p-6 rounded-2xl max-w-[300px] mx-auto space-y-1.5 backdrop-blur-sm">
+                    <p class="text-slate-500 text-[11px] uppercase tracking-wider font-semibold">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    <h2 id="guest-name" class="text-xl font-bold text-slate-900">Tamu Undangan</h2>
+                </div>
+            </div>
+
+            <button onclick="openInvitation()" class="group relative px-8 py-4 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 hover:from-emerald-900 hover:to-emerald-900 text-white rounded-full font-bold shadow-xl shadow-emerald-900/20 transition-all flex items-center gap-2.5 mx-auto active:scale-95 border border-emerald-600/30">
+                <i data-lucide="heart" class="w-4 h-4 fill-current text-amber-300"></i>
+                <span>Buka Undangan</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-24 bg-gradient-to-b from-emerald-50/40 via-[#fcfcf9] to-[#fcfcf9]">
+        <div class="absolute inset-0 pointer-events-none">
+            <img src="img/mempelai.jpeg" class="w-full h-full object-cover object-top opacity-15 filter blur-[1px]" alt="Hero background">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#fcfcf9]/70 via-[#fcfcf9]/90 to-[#fcfcf9]"></div>
+        </div>
+
+        <div class="relative z-10 text-center space-y-6 px-6 reveal max-w-3xl mx-auto">
+            <p class="uppercase tracking-[0.4em] text-[11px] text-amber-700 font-bold">We Are Getting Married</p>
+            <h1 class="font-serif text-6xl md:text-8xl leading-tight text-gradient italic font-bold">Faridah & Wafi</h1>
+            
+            <div class="space-y-4">
+                <p class="text-2xl md:text-3xl font-medium tracking-[0.25em] text-emerald-950 font-serif">17 . 01 . 2027</p>
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-50/90 border border-amber-200/90 text-amber-800 text-xs md:text-sm font-semibold tracking-wider shadow-xs">
+                    <i data-lucide="moon" class="w-4 h-4 text-amber-600"></i>
+                    <span>Minggu, 17 Januari 2027 &bull; 9 Sya'ban 1448 H</span>
+                </div>
+                
+                <!-- Countdown -->
+                <div class="flex justify-center gap-3 md:gap-5 pt-4">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white border border-emerald-100 shadow-sm w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-3xl font-bold text-emerald-950 mb-1.5" id="days">00</div>
+                        <span class="text-[11px] uppercase tracking-wider text-slate-600 font-bold">Hari</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white border border-emerald-100 shadow-sm w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-3xl font-bold text-emerald-950 mb-1.5" id="hours">00</div>
+                        <span class="text-[11px] uppercase tracking-wider text-slate-600 font-bold">Jam</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white border border-emerald-100 shadow-sm w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-3xl font-bold text-emerald-950 mb-1.5" id="minutes">00</div>
+                        <span class="text-[11px] uppercase tracking-wider text-slate-600 font-bold">Menit</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white border border-emerald-100 shadow-sm w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-3xl font-bold text-emerald-950 mb-1.5" id="seconds">00</div>
+                        <span class="text-[11px] uppercase tracking-wider text-slate-600 font-bold">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. AYAT SECTION -->
+    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+        <div class="card-white p-8 md:p-12 rounded-[2rem] space-y-6 reveal border-t-2 border-t-amber-600/40 bg-gradient-to-b from-white to-emerald-50/20">
+            <div class="text-2xl md:text-3xl font-serif text-emerald-950 leading-loose italic font-medium" dir="rtl">
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ
+            </div>
+            <p class="text-sm md:text-base text-slate-700 italic leading-relaxed max-w-2xl mx-auto">
+                "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang..."
+            </p>
+            <p class="font-bold text-amber-700 tracking-widest uppercase text-xs">( QS. Ar-Rum: 21 )</p>
+        </div>
+    </section>
+
+    <!-- 4. COUPLE SECTION (MEMPELAI) -->
+    <section class="py-24 px-6 bg-emerald-50/30 border-y border-emerald-100/60">
+        <div class="max-w-4xl mx-auto space-y-16">
+            <div class="text-center space-y-3 reveal">
+                <p class="uppercase tracking-[0.3em] text-xs text-amber-700 font-bold">Pasangan Mempelai</p>
+                <h2 class="font-serif text-4xl md:text-5xl italic text-emerald-950 font-bold">Mempelai</h2>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Bride -->
+                <div class="text-center space-y-2 reveal">
+                    <h3 class="font-script text-5xl md:text-6xl text-emerald-900 font-bold">Faridah Aulia, SKM</h3>
+                    <p class="text-slate-700 font-medium text-sm md:text-base">Putri Pertama Dari KH. Muhammad Sam'ani & Hj. Amrina Rosyada</p>
+                </div>
+
+                <!-- Center Photo (The new illustration from img/mempelai.jpeg) -->
+                <div class="text-center reveal">
+                    <div class="relative inline-block max-w-[320px] sm:max-w-[400px]">
+                        <div class="rounded-3xl overflow-hidden border-4 border-white shadow-2xl ring-4 ring-emerald-200/60 bg-white">
+                            <img src="img/mempelai.jpeg" class="w-full h-auto block" alt="Mempelai Faridah & Wafi">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 w-12 h-12 bg-gradient-to-br from-emerald-800 to-emerald-900 rounded-2xl flex items-center justify-center text-amber-300 shadow-xl border border-amber-300/40">
+                            <i data-lucide="heart" class="fill-current w-5 h-5"></i>
+                        </div>
+                    </div>                  
+                </div>
+
+                <!-- Groom -->
+                <div class="text-center space-y-2 reveal">                   
+                    <h3 class="font-script text-5xl md:text-6xl text-amber-800 font-bold">Mohamad Wafi Fawwaz Al Haq</h3>
+                    <p class="text-slate-700 font-medium text-sm md:text-base">Putra Tunggal Dari Bpk. Rifky Ghufron & Ibu Dasimah</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EVENTS SECTION (DETAIL ACARA) -->
+    <section class="py-24 px-6 bg-[#fcfcf9]">
+        <div class="max-w-4xl mx-auto space-y-16">
+            <div class="text-center space-y-3 reveal">
+                <p class="uppercase tracking-[0.3em] text-xs text-amber-700 font-bold">Waktu & Tempat</p>
+                <h2 class="font-serif text-4xl md:text-5xl italic text-emerald-950 font-bold">Detail Acara</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Akad -->
+                <div class="card-white p-8 rounded-[2rem] space-y-6 relative overflow-hidden reveal border-t-4 border-t-emerald-700">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-serif text-3xl italic text-emerald-950 font-bold">Akad Nikah</h3>
+                        <span class="px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-semibold border border-emerald-200">07.00 WITA</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="calendar" class="w-5 h-5 text-emerald-700 shrink-0 mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Minggu, 17 Januari 2027</p>
+                                <p class="text-amber-800 text-xs font-semibold mt-0.5">9 Sya'ban 1448 H</p>
+                                <p class="text-slate-600 text-xs font-medium mt-1">Pukul 07.00 WITA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-emerald-700 shrink-0 mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Gedung BPSDM</p>
+                                <p class="text-slate-600 text-xs leading-relaxed mt-0.5">Jl. Ambulung, Loktabat Selatan, Kec. Banjarbaru Selatan<br>Kota Banjarbaru, Kalimantan Selatan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Faridah+%26+Wafi&dates=20270117T000000Z/20270117T020000Z&location=Gedung+BPSDM,+Jl.+Ambulung,+Kota+Banjarbaru" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-xl text-xs font-semibold transition-colors">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Simpan ke Kalender
+                    </a>
+                </div>
+
+                <!-- Resepsi -->
+                <div class="card-white p-8 rounded-[2rem] space-y-6 relative overflow-hidden reveal border-t-4 border-t-amber-600">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-serif text-3xl italic text-amber-950 font-bold">Resepsi</h3>
+                        <span class="px-3 py-1 bg-amber-50 text-amber-800 rounded-full text-xs font-semibold border border-amber-200">09.30 - 14.30</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="calendar" class="w-5 h-5 text-amber-700 shrink-0 mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Minggu, 17 Januari 2027</p>
+                                <p class="text-amber-800 text-xs font-semibold mt-0.5">9 Sya'ban 1448 H</p>
+                                <p class="text-slate-600 text-xs font-medium mt-1">Pukul 09.30 s/d 14.30 WITA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-amber-700 shrink-0 mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Gedung BPSDM</p>
+                                <p class="text-slate-600 text-xs leading-relaxed mt-0.5">Jl. Ambulung, Loktabat Selatan, Kec. Banjarbaru Selatan<br>Kota Banjarbaru, Kalimantan Selatan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Faridah+%26+Wafi&dates=20270117T013000Z/20270117T063000Z&location=Gedung+BPSDM,+Jl.+Ambulung,+Kota+Banjarbaru" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl text-xs font-semibold transition-colors">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Simpan ke Kalender
+                    </a>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="space-y-6 reveal">
+                <h3 class="font-serif text-3xl text-center italic text-emerald-950 font-bold">Lokasi Acara</h3>
+                <div class="card-white p-2 rounded-[2rem] overflow-hidden shadow-md">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.1380143959304!2d114.82187341292723!3d-3.456229845828358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de6819e8b1bca15%3A0xffb2750b5c20b204!2sAula%20BPSDMD%20Ambulung!5e1!3m2!1sen!2sid!4v1794121442210!5m2!1sen!2sid" class="w-full h-80 rounded-[1.8rem]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="text-center">
+                    <a href="https://maps.app.goo.gl/TUkvBJWZwTpLaMkb6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-900 hover:bg-emerald-950 text-white rounded-full font-bold text-sm shadow-md shadow-emerald-950/20 transition-all active:scale-95">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-amber-300"></i>
+                        <span>Buka di Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. DENAH LOKASI SECTION -->
+    <section class="py-20 px-6 bg-white border-t border-emerald-100/60">
+        <div class="max-w-4xl mx-auto space-y-8 reveal text-center">
+            <div class="space-y-2">
+                <p class="uppercase tracking-[0.3em] text-xs text-amber-700 font-bold">Petunjuk Rute</p>
+                <h2 class="font-serif text-3xl md:text-4xl italic text-emerald-950 font-bold">Denah Lokasi</h2>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Panduan denah rute menuju Gedung BPSDM Kalsel Jl. Ambulung</p>
+            </div>
+
+            <div class="card-white p-4 sm:p-6 md:p-8 rounded-[2rem] shadow-lg border border-emerald-900/10 max-w-3xl mx-auto bg-white">
+                <div class="relative overflow-hidden rounded-2xl bg-white border border-slate-100 p-2 sm:p-4">
+                    <img src="img/denah.svg" alt="Denah Lokasi Gedung BPSDM Kalsel Jl. Ambulung" class="w-full h-auto mx-auto object-contain max-h-[520px] transition-transform duration-300 hover:scale-[1.01]">
+                </div>
+                
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <a href="img/denah.svg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-full font-semibold text-xs transition-all active:scale-95 shadow-sm">
+                        <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                        <span>Lihat Ukuran Penuh</span>
+                    </a>
+                    <a href="https://maps.app.goo.gl/TUkvBJWZwTpLaMkb6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-900 hover:bg-emerald-950 text-white rounded-full font-semibold text-xs transition-all active:scale-95 shadow-md shadow-emerald-950/15">
+                        <i data-lucide="navigation" class="w-4 h-4 text-amber-300"></i>
+                        <span>Petunjuk Arah (Navigasi)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TURUT MENGUNDANG -->
+    <section class="py-24 px-6 bg-emerald-50/40 border-t border-emerald-100/60">
+        <div class="max-w-4xl mx-auto text-center space-y-8 reveal">
+            <div class="space-y-2">
+                <p class="uppercase tracking-[0.3em] text-xs text-amber-700 font-bold">Keluarga & Kerabat</p>
+                <h2 class="font-serif text-3xl md:text-4xl italic text-emerald-950 font-bold">Turut Mengundang</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-3xl mx-auto text-slate-800 text-sm md:text-base font-medium">
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    KH. Abul Hasan (Alm) & Hj. Hamidah
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    KH. Abdurrahman & Hj. Isnani (Alm)
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    Hj. Ramlah & Ustadz
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    H. Zafrullah Hadi (Alm)
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    Hj. Jariah & H. Khairin
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    M. Zamroni dan Isteri
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    H. M. Nopal dan Isteri
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    H.M. Ali Abbas BA (Alm) dan Hj. Murniati
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    H. Muhammad Afif, Lc & Istri
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors">
+                    Kholilurrahman
+                </div>
+                <div class="card-white py-3.5 px-4 rounded-xl shadow-xs border border-emerald-900/10 hover:border-emerald-700/30 transition-colors sm:col-span-2">
+                    H. Abdul Hakim Rauf, S.I.P., S.H., M.H. & Istri
+                </div>
+            </div>
+
+            <div class="pt-4 max-w-xl mx-auto">
+                <div class="font-bold text-emerald-950 bg-gradient-to-r from-emerald-100/90 via-amber-100/70 to-emerald-100/90 py-3.5 px-6 rounded-2xl border border-emerald-200/80 shadow-sm text-sm md:text-base">
+                    Seluruh Keluarga Besar H. Idar Bin Ahmid
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. DIGITAL ENVELOPE (TANDA KASIH) -->
+    <section class="py-24 px-6 bg-[#fcfcf9] border-t border-emerald-100/60">
+        <div class="max-w-4xl mx-auto space-y-10 text-center reveal">
+            <div class="space-y-3">
+                <p class="uppercase tracking-[0.3em] text-xs text-amber-700 font-bold">Tanda Kasih</p>
+                <h2 class="font-serif text-4xl md:text-5xl italic text-emerald-950 font-bold">Kado Digital</h2>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Bapak/Ibu/Saudara/i ingin memberikan tanda kasih, dapat melalui fitur di bawah ini:</p>
+            </div>
+            
+            <div class="max-w-md mx-auto">
+                <!-- Card: Faridah Aulia -->
+                <div class="card-white p-7 md:p-8 rounded-[2.5rem] space-y-6 shadow-lg border border-emerald-900/10 bg-white">
+                    <div class="space-y-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA Logo" class="h-9 mx-auto">
+                        <div class="space-y-1">
+                            <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">A.N Faridah Aulia</p>
+                        </div>
+                        <div class="bg-emerald-50/70 border border-emerald-100 py-3.5 px-4 rounded-2xl">
+                            <h2 id="dana-number" class="text-2xl md:text-3xl font-mono font-bold tracking-wider text-emerald-900">0812 3456 7890</h2>
+                        </div>
+                    </div>
+                    <button id="btn-copy-dana" onclick="copyNumber('dana-number', 'Faridah Aulia', 'btn-copy-dana')" class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-emerald-800 hover:bg-emerald-900 text-white rounded-full font-bold text-sm shadow-md shadow-emerald-900/20 transition-all active:scale-95">
+                        <i data-lucide="copy" class="w-4 h-4 text-amber-300"></i>
+                        <span>Salin Nomor DANA</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. RSVP & GUESTBOOK -->
+    <section class="py-24 px-6 bg-white border-t border-emerald-100/60">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="text-center space-y-3 reveal">
+                <p class="uppercase tracking-[0.3em] text-xs text-amber-700 font-bold">Buku Tamu</p>
+                <h2 class="font-serif text-4xl md:text-5xl italic text-emerald-950 font-bold">RSVP & Ucapan</h2>
+                <p class="text-slate-600 text-sm">Berikan doa restu dan konfirmasi kehadiran Anda</p>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Form -->
+                <div class="card-white p-6 md:p-8 rounded-[2rem] shadow-md reveal border border-emerald-900/10">
+                    <form id="rsvp-form" class="space-y-4">
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] uppercase tracking-wider text-slate-700 font-bold">Nama Lengkap</label>
+                            <input name="nama" type="text" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-100 transition-all" placeholder="Contoh: Budi Santoso">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] uppercase tracking-wider text-slate-700 font-bold">Konfirmasi Kehadiran</label>
+                            <select name="kehadiran" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-100 transition-all">
+                                <option value="" disabled selected>Pilih Kehadiran</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] uppercase tracking-wider text-slate-700 font-bold">Pesan & Doa</label>
+                            <textarea name="pesan" rows="3" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-100 transition-all" placeholder="Tulis ucapan selamat dan doa restu..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-900/20 transition-all active:scale-[0.99]">
+                            <i data-lucide="send" class="w-4 h-4 text-amber-300"></i>
+                            <span>Kirim Ucapan</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Messages List -->
+                <div class="space-y-3.5 max-h-[420px] overflow-y-auto pr-2 custom-scrollbar reveal" id="guestbook-container">
+                    <!-- Messages will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER (ELEGANT EMERALD & GOLD) -->
+    <footer class="py-16 px-6 text-center bg-gradient-to-b from-[#fcfcf9] to-emerald-50/50 border-t border-emerald-200/60">
+        <div class="max-w-4xl mx-auto space-y-5">
+            <h2 class="font-serif text-4xl italic text-emerald-950 font-bold">Faridah & Wafi</h2>
+            <p class="text-slate-600 text-sm">Terima kasih atas doa dan restunya.</p>
+            <div class="flex justify-center gap-3 text-amber-600/70">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <i data-lucide="heart" class="w-4 h-4 fill-current text-emerald-700"></i>
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-semibold">
+                &copy; 2027 Undangan Digital. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Guest Name from URL, Path, or Hash
+        function formatName(raw) {
+            if (!raw) return '';
+            try {
+                raw = decodeURIComponent(raw.replace(/\+/g, ' '));
+            } catch (e) {}
+            return raw
+                .replace(/[-_]/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        function getGuestName() {
+            // Check query parameter (?to=..., ?nama=..., ?u=...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const to = urlParams.get('to') || urlParams.get('nama') || urlParams.get('u');
+            if (to && to.trim() !== '') return formatName(to);
+
+            // Check URL hash (#...)
+            let hash = window.location.hash ? window.location.hash.substring(1) : '';
+            if (hash && hash.trim() !== '' && !hash.includes('/')) {
+                return formatName(hash);
+            }
+
+            // Check URL path (domain.com/shuni & istri)
+            let path = window.location.pathname.substring(1);
+            path = path.replace(/\/+$/, '');
+            if (path && path.trim() !== '' && !path.includes('.') && path.toLowerCase() !== 'generator') {
+                return formatName(path);
+            }
+
+            return 'Tamu Undangan';
+        }
+
+        const guestName = getGuestName();
+        const guestNameEl = document.getElementById('guest-name');
+        if (guestNameEl) guestNameEl.innerText = guestName;
+
+        // Auto-fill RSVP name input if guest name is specific
+        if (guestName && guestName !== 'Tamu Undangan') {
+            const namaInput = document.querySelector('input[name="nama"]');
+            if (namaInput) namaInput.value = guestName;
+        }
+
+        // 2. Open Invitation
+        const cover = document.getElementById('cover');
+        const music = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+        let isPlaying = false;
+
+        function openInvitation() {
+            cover.style.transform = 'translateY(-100%)';
+            document.body.classList.remove('locked');
+            musicToggle.classList.remove('hidden');
+            playMusic();
+            
+            // Trigger reveal animations
+            setTimeout(handleScroll, 150);
+        }
+
+        function playMusic() {
+            music.play().catch(e => console.log("Play blocked by browser autoplay policy"));
+            isPlaying = true;
+            musicToggle.classList.add('animate-spin-slow');
+        }
+
+        musicToggle.onclick = () => {
+            if (isPlaying) {
+                music.pause();
+                musicToggle.classList.remove('animate-spin-slow');
+            } else {
+                music.play();
+                musicToggle.classList.add('animate-spin-slow');
+            }
+            isPlaying = !isPlaying;
+        };
+
+        // 3. Scroll Reveal
+        function handleScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 120;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleScroll);
+
+        // 4. Countdown (17 Januari 2027 07:00 WITA)
+        const targetDate = new Date("Jan 17, 2027 07:00:00").getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // 5. RSVP & Guestbook (Google Apps Script)
+        const rsvpForm = document.getElementById('rsvp-form');
+        const guestbookContainer = document.getElementById('guestbook-container');
+
+        rsvpForm.onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(rsvpForm);
+            
+            // Optimistic update
+            const newMsg = {
+                nama: formData.get('nama'),
+                kehadiran: formData.get('kehadiran'),
+                pesan: formData.get('pesan')
+            };
+            addMessageToUI(newMsg, true);
+
+            try {
+                await fetch("https://script.google.com/macros/s/AKfycbyZ9jXrtgDIGlkPUSVzpOMMZ9ee0FBB1xr6h1Z3GabkHMMOYtEd7vVdK_V3c_D7zfFxXQ/exec", {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: formData
+                });
+                alert("Terima kasih! Pesan dan konfirmasi berhasil dikirim.");
+                rsvpForm.reset();
+            } catch (error) {
+                console.error(error);
+                alert("Pesan terkirim ke tampilan. Terima kasih atas doa restunya!");
+                rsvpForm.reset();
+            }
+        };
+
+        function addMessageToUI(msg, prepend = false) {
+            const div = document.createElement('div');
+            div.className = 'card-white p-5 rounded-2xl space-y-2 reveal active';
+            const isHadir = msg.kehadiran === 'Hadir';
+            div.innerHTML = `
+                <div class="flex justify-between items-start gap-2">
+                    <h4 class="font-bold text-slate-900 text-sm">${msg.nama || 'Tamu'}</h4>
+                    <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shrink-0 ${isHadir ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-rose-50 text-rose-700 border border-rose-200'}">
+                        ${msg.kehadiran || 'Konfirmasi'}
+                    </span>
+                </div>
+                <p class="text-slate-700 text-xs md:text-sm leading-relaxed">${msg.pesan || ''}</p>
+            `;
+            if (prepend) guestbookContainer.prepend(div);
+            else guestbookContainer.appendChild(div);
+        }
+
+        // Load initial messages from script callback
+        window.loadGuestbook = (data) => {
+            guestbookContainer.innerHTML = '';
+            if (Array.isArray(data)) {
+                data.reverse().forEach(item => addMessageToUI(item));
+            }
+        };
+
+        // Copy DANA with sleek toast and button feedback
+        function showCopyToast(message) {
+            let toast = document.getElementById('copy-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'copy-toast';
+                toast.className = 'fixed bottom-24 left-1/2 -translate-x-1/2 z-[130] bg-slate-900 text-white text-xs md:text-sm font-medium px-5 py-2.5 rounded-full shadow-xl flex items-center gap-2 border border-white/20 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-2';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>${message}</span>`;
+            if (window.lucide) lucide.createIcons();
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+            }, 3000);
+        }
+
+        function copyNumber(elementId, ownerName, btnId) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            const number = el.innerText.trim();
+
+            const onSuccess = () => {
+                showCopyToast(`Nomor DANA a.n ${ownerName} berhasil disalin!`);
+                if (btnId) {
+                    const btn = document.getElementById(btnId);
+                    if (btn) {
+                        const originalHtml = btn.innerHTML;
+                        btn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-amber-300"></i><span>Berhasil Disalin!</span>`;
+                        btn.classList.remove('bg-emerald-800', 'hover:bg-emerald-900');
+                        btn.classList.add('bg-emerald-700');
+                        if (window.lucide) lucide.createIcons();
+                        setTimeout(() => {
+                            btn.innerHTML = originalHtml;
+                            btn.classList.remove('bg-emerald-700');
+                            btn.classList.add('bg-emerald-800', 'hover:bg-emerald-900');
+                            if (window.lucide) lucide.createIcons();
+                        }, 2500);
+                    }
+                }
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(number).then(onSuccess).catch(() => {
+                    fallbackCopy(number, onSuccess);
+                });
+            } else {
+                fallbackCopy(number, onSuccess);
+            }
+        }
+
+        function fallbackCopy(text, callback) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                if (callback) callback();
+            } catch (err) {
+                prompt("Silakan salin nomor berikut:", text);
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+    <script src="https://script.google.com/macros/s/AKfycbyZ9jXrtgDIGlkPUSVzpOMMZ9ee0FBB1xr6h1Z3GabkHMMOYtEd7vVdK_V3c_D7zfFxXQ/exec?callback=loadGuestbook"></script>
+</body>
+</html>

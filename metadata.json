@@ -1,0 +1,7 @@
+{
+  "name": "Nazwa Amelia & M. Iqbal Wedding Invitation",
+  "description": "Undangan Pernikahan Digital Faridah Aulia, SKM & Mohamad Wafi Fawwaz Al Haq.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
